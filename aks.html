@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Аксессуары</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header>
+        <div class="l">
+            <img id="logo" src="IMG_6524-removebg-preview.png" alt="">
+            <h1>SPORTIFY</h1>
+        </div>
+        <div class="had">
+            <a href="index.html">Home</a>
+            <a href="about.html">About us</a>
+            <a href="basket.html">Корзина</a>
+        </div>
+    </header>
+    <nav>
+        <a href="hudi.html">Худи</a>
+        <a href="nos.html">Носки</a>
+        <a href="foot.html">Футболки</a>
+        <a href="triko.html">Трико</a>
+        <a href="aks.html">Аксессы</a>
+        <a href="shorti.html">Шорты</a>
+    </nav>
+    
+    <div id="cont" class="product-container1"></div>
+    
+    <script>
+        const aksessy = [
+            {
+                Image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlC_mHGkQjDu8-XMbuKckxGGX02bXp_9TVBA&s',
+                aks: 'Резина',
+                money: '2000'
+            },
+            {
+                Image: 'https://lifehacker.ru/wp-content/uploads/2020/01/1036624662_1578573734.jpg',
+                aks: 'Резина для ног',
+                money: '1500'
+            },
+            {
+                Image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQk5wV1jc2q-bItQa1fYMRzO7jYJfCRkux2Sg&s',
+                aks: 'Утижелитель',
+                money: '3000'
+            },
+            {
+                Image: 'https://ekb.uteka.ru/media/1024/2/b0/2b03fa1c7274d58e4576dfbeff9f9a91.jpg',
+                aks: 'Тейп',
+                money: '800'
+            },
+            {
+                Image: 'https://bitrix.aptekaplus.kz/cdn/?q=/upload/iblock/b8f/biolabioplataxleykoplastyrnanetkanoyosnove25sm5m.jpg',
+                aks: 'Тейп Bioplatex',
+                money: '500'
+            },
+            {
+                Image: 'https://kursor-shop.kz/image/cache/catalog/apple/airpods-pro2/type-c/type-c_1-600x600.jpg',
+                aks: 'AirPods',
+                money: '4500'
+            }
+        ];
+        
+        const container = document.getElementById('cont');
+        
+        aksessy.forEach(item => {
+            const card = document.createElement('div');
+            card.classList.add('product-card');
+            
+            card.innerHTML = `
+                <img src="${item.Image}" alt="${item.aks}">
+                <h2>${item.aks}</h2>
+                <p>${item.money} KZT</p>
+                <button class="add-to-cart">Добавить в корзину</button>
+            `;
+            
+            card.querySelector('.add-to-cart').addEventListener('click', () => {
+                let cart = JSON.parse(localStorage.getItem('cart')) || [];
+                cart.push(item);
+                localStorage.setItem('cart', JSON.stringify(cart));
+            });
+            
+            container.appendChild(card);
+        });
+    </script>
+</body>
+</html>

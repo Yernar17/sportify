@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Футболки</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header>
+        <div class="l">
+            <img id="logo" src="IMG_6524-removebg-preview.png" alt="">
+            <h1>SPORTIFY</h1>
+        </div>
+        <div class="had">
+            <a href="index.html">Home</a>
+            <a href="about.html">About us</a>
+            <a href="basket.html">Корзина</a>
+        </div>
+    </header>
+    <nav>
+        <a href="hudi.html">Худи</a>
+        <a href="nos.html">Носки</a>
+        <a href="foot.html">Футболки</a>
+        <a href="triko.html">Трико</a>
+        <a href="aks.html">Аксессы</a>
+        <a href="shorti.html">Шорты</a>
+    </nav>
+    
+    <div id="cont" class="product-container"></div>
+    
+    <script>
+        const fubolki = [
+            {
+                Image: 'https://img.joomcdn.net/13b14a3b071658ee5b748e0d0da182a75b867762_original.jpeg',
+                style: 'Без надписью',
+                money: '5590'
+            },
+            {
+                Image: 'https://image-thumbs.shafastatic.net/-279217970_310_430',
+                style: 'Gym Hub',
+                money: '6000'
+            },
+            {
+                Image: 'https://ae04.alicdn.com/kf/S06f8e12fe64a4376b3f0f4aa43cd1b84U.jpg_480x480.jpg',
+                style: 'Spider',
+                money: '6000'
+            }
+        ];
+        
+        const container = document.getElementById('cont');
+        
+        fubolki.forEach(item => {
+            const card = document.createElement('div');
+            card.classList.add('product-card');
+            
+            card.innerHTML = `
+                <img src="${item.Image}" alt="${item.style}">
+                <h2>${item.style}</h2>
+                <p>${item.money} KZT</p>
+                <button class="add-to-cart">Добавить в корзину</button>
+            `;
+            
+            card.querySelector('.add-to-cart').addEventListener('click', () => {
+                let cart = JSON.parse(localStorage.getItem('cart')) || [];
+                cart.push(item);
+                localStorage.setItem('cart', JSON.stringify(cart));
+            });
+            
+            container.appendChild(card);
+        });
+    </script>
+</body>
+</html>

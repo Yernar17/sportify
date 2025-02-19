@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корзина</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="basket.js"></script>
+</head>
+<body>
+    <header>
+        <div class="l">
+            <img id="logo" src="IMG_6524-removebg-preview.png" alt="">
+            <h1>SPORTIFY</h1>
+        </div>
+        <div class="had">
+            <a href="index.html">Home</a>
+            <a href="about.html">About us</a>
+            <a href="#footer">Связаться</a>
+            <a href="basket.html">Корзина</a>
+        </div>
+    </header>
+    <nav>
+        <a href="hudi.html">Худи</a>
+        <a href="nos.html">Носки</a>
+        <a href="foot.html">Футболки</a>
+        <a href="triko.html">Трико</a>
+        <a href="aks.html">Аксессы</a>
+        <a href="shorti.html">Шорты</a>
+    </nav>
+    
+    <h1 style="text-align: center; color: black; margin: 20px;">Корзина</h1>
+    <div id="basket-container" class="product-container"></div>
+    <button id="clear-cart">Очистить корзину</button>
+    <a href="https://wa.me/+77471168018"><button class="buy">КУПИТЬ</button></a>
+    
+    <footer id="footer">
+        <div>
+            <img class="log1" src="IMG_6524-removebg-preview.png" alt="">
+            <h1>SPORTIFY</h1>
+        </div>
+    
+        <div class="d">
+            <h1>О компании</h1>
+            <p>Интернет магазин спорт товаров</p>
+        </div>
+    
+        <div class="socseti">
+            <h1>Соц сети</h1>
+    
+            <div class="s">
+                <a href="https://t.me/@kana1ikk"><img src="telegram-svgrepo-com (1).svg" alt=""></a>
+                <a href="https://wa.me/+77471168018"><img src="whatsapp-symbol-logo-svgrepo-com.svg" alt=""></a>
+                <a href=""><img src="tiktok-icon-black-1-logo-svgrepo-com.svg" alt=""></a>
+                <a href=""><img src="instagram-1-svgrepo-com.svg" alt=""></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const basketContainer = document.getElementById('basket-container');
+        const clearCartButton = document.getElementById('clear-cart');
+        
+        function renderCart() {
+            basketContainer.innerHTML = '';
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            
+            if (cart.length === 0) {
+                basketContainer.innerHTML = '<p style="text-align: center; font-size: 20px;">Корзина пуста</p>';
+                return;
+            }
+            
+            cart.forEach((item, index) => {
+                const card = document.createElement('div');
+                card.classList.add('product-card');
+                
+                card.innerHTML = `
+                    <img src="${item.Image}" alt="${item.aks}">
+                    <h2>${item.aks}</h2>
+                    <p>${item.money} KZT</p>
+                    <button class="remove-from-cart" data-index="${index}">Удалить</button>
+                `;
+                
+                basketContainer.appendChild(card);
+            });
+            
+            document.querySelectorAll('.remove-from-cart').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+                    cart.splice(e.target.dataset.index, 1);
+                    localStorage.setItem('cart', JSON.stringify(cart));
+                    renderCart();
+                });
+            });
+        }
+        
+        clearCartButton.addEventListener('click', () => {
+            localStorage.removeItem('cart');
+            renderCart();
+        });        
+        renderCart();
+    </script>
+</body>
+</html>

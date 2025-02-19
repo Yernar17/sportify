@@ -1,0 +1,539 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    background: rgb(0, 0, 0);
+    height: 120px;
+    width: 100%;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav{
+    background: rgb(0, 0, 0);
+    height: 40px;
+    width: 100%;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav a{
+    color: white;
+    text-decoration: none;
+    display: flex;
+    width: 270px;
+    height: 30px;
+    border-radius: 6px;
+    align-items: center;
+    transition: .6s ease-in-out;
+    text-align: center;
+    justify-content: center;
+}
+
+nav a:hover{
+    background: rgb(53, 53, 255);
+    transition: .6s ease-in-out;
+}
+
+body{
+    background: #cfcfcf;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#logo{
+    height: 140px;
+    width: auto;
+    transition: transform 0.6s ease-in-out;
+}
+
+.had{
+    display: flex;
+    gap: 50px;
+}
+
+.had a{
+    color: white;
+    text-decoration: none;
+    transition: .6s ease-in-out;
+}
+
+.had a:hover{
+    color: rgb(53, 53, 255);
+    transition: .6s ease-in-out;
+}
+
+.phone{
+    width: 100%;
+    height: auto;
+}
+
+.bas{
+    position: absolute;
+    color: white;
+    bottom: 120px;
+    left: 150px;
+    font-size: 30px;
+    display: grid;
+    gap: 20px;
+    background: #000000bd;
+    width: 500px;
+    height: 270px;
+    padding: 20px;
+    border-radius: 6px;
+}
+
+.bas button{
+    background: rgb(53, 53, 255);
+    border: .5px solid black;
+    border-radius: 20px;
+    width: 140px;
+    height: 40px;
+    transition: .5s ease-in-out;
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border: 1px rgb(53, 53, 255) solid;
+    cursor: pointer;
+} 
+
+.bas button:hover{
+    transition: .5s ease-in-out;
+    background: none;
+    border: 1px rgb(53, 53, 255) solid;
+    cursor: pointer;
+}
+
+#container{
+    margin-left: 80px;
+}
+
+#container img{
+    height: 400px;
+    width: 240px;
+    object-fit: cover;
+    transition: .5s ease-in-out;
+}
+
+.photo{
+    height: 340px;
+    width: 260px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-left: 160px;
+    margin-top: 100px;
+}
+
+.txt{
+    position: absolute;
+    margin-left: 170px;
+    text-decoration: none;
+    color: rgb(86, 86, 255);
+    bottom: -1030px;
+    background: rgba(0, 0, 0, 0.508);
+    width: 240px;
+    height: 40px;
+    text-align: center;
+    border-radius: 6px;
+    transition: .5s ease-in-out;
+}
+
+.txt:hover{
+    background: rgb(255, 255, 255);
+    transition: .5s ease-in-out;
+}
+
+.txt1{
+    position: absolute;
+    margin-left: 170px;
+    text-decoration: none;
+    color: rgb(86, 86, 255);
+    bottom: -1030px;
+    background: rgba(0, 0, 0, 0.508);
+    width: 240px;
+    height: 40px;
+    text-align: center;
+    border-radius: 6px;
+    transition: .5s ease-in-out;
+}
+
+.txt1:hover{
+    background: rgb(255, 255, 255);
+    transition: .5s ease-in-out;
+}
+
+.txt2{
+    position: absolute;
+    margin-left: 170px;
+    text-decoration: none;
+    color: rgb(86, 86, 255);
+    bottom: -1480px;
+    background: rgba(0, 0, 0, 0.508);
+    width: 240px;
+    height: 40px;
+    text-align: center;
+    border-radius: 6px;
+    transition: .5s ease-in-out;
+}
+
+.txt2:hover{
+    background: rgb(255, 255, 255);
+    transition: .5s ease-in-out;
+}
+
+
+.obshi{
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr;
+    margin-right: 150px;
+}
+
+.bar{
+    background: white;
+    height: 200px;
+    width: 100%;
+    margin-top: 100px;
+    text-align: center;
+    padding:  60px 0px ;
+}
+
+.ph{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: space-evenly;
+    margin-bottom: 40px ;
+}
+
+.ph img{
+    height: 90px;
+    width: auto;
+    object-fit: cover;
+    padding-top: 50px;
+}
+
+
+
+.l{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.log1{
+    height: 250px;
+    width: auto;
+}
+
+svg{
+    margin-top: -2px;
+    padding: 0;
+}
+
+.product-card{
+    background: rgb(53, 53, 255);
+    height: 400px;
+    width: 260px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 20px;
+    gap: 10px;
+    color: white;
+    padding: 10px;
+}
+
+.product-card img{
+    height: 300px;
+    width: 270px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.product-container{
+    display: flex;
+    flex-direction: row; 
+    gap: 40px;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 60px;
+}
+
+.product-container1{
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr;
+    gap: 30px;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 60px;
+    margin-left: 140px;
+}
+
+.add-to-cart{
+    width: 250px;
+    height: 35px;
+    border-radius: 3px;
+    border: 1px solid black;
+    background: rgb(255, 255, 255);
+    cursor: pointer;
+    transition: .5s ease-in-out;
+}
+
+.add-to-cart:hover{
+    transition: .5s ease-in-out;
+    background: #838383;
+}
+
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+}
+
+.product-card {
+    background: white;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 20px;
+    width: 250px;
+    padding-bottom: 50px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.product-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.product-card h2 {
+    color: black;
+    margin: 10px 0;
+}
+
+.product-card p {
+    color: blue;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.product-card button {
+    background: black;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.product-card button:hover {
+    background: blue;
+}
+
+#clear-cart {
+    display: block;
+    margin: 20px 35%;
+    padding: 15px 30px;
+    font-size: 16px;
+    background: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#clear-cart:hover {
+    background: blue;
+}
+
+footer{
+    background: #000;
+    width: 100%;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 15px 0;
+    align-items: center;
+}
+
+.socseti{
+    display: grid;
+    gap: 60px;
+}
+
+.s{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.s img{
+    height: 55px;
+    width: auto;
+    transition: .5s ease-in-out;
+}
+
+.s img:hover{
+    transform: scale(1.2);
+    transition: .5s ease-in-out;
+}
+
+.d{
+    display: grid;
+    gap: 100px;
+}
+
+.buy{
+    background: rgb(0, 212, 0);
+    color: white;
+    border: 1px solid black;
+    padding: 15px 30px;
+    border-radius: 5px;
+    transition: .5s ease-in-out;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-left: 55%;
+    bottom: -117px;
+    position: absolute;
+}
+
+.buy:hover{
+    background: rgb(0, 124, 0);
+    transition: .5s ease-in-out;
+    cursor: pointer;
+}
+
+@keyframes rotateLogo {
+    0% {
+        transform: rotateZ(0deg);
+        transform: rotateX(0deg);
+        transform: rotateY(0deg);
+    }
+    100% {
+        transform: rotateZ(360deg);
+        transform: rotateX(360deg);
+        transform: rotateY(360deg);
+    }
+    0%{
+        transform: rotateZ(0deg);
+        transform: rotateX(0deg);
+        transform: rotateY(0deg);
+    }
+}
+
+#logo:hover {
+    animation: rotateLogo 0.6s ease-in-out;
+}
+
+@media (max-width: 768px) {
+    .photo{
+        height: 230px;
+        width: 150px;
+        margin-left: 80px;
+    }
+    .obshi{
+        display: grid;
+        gap: 5px;
+        grid-template-columns: 2fr 2fr 2fr;
+        margin-right: 200px;
+        margin-left: 10px;
+    }
+    .txt{
+        width: 110px;
+        height: 25px;
+        position: absolute;
+        margin-left: 100px;
+        bottom: -450px;
+        font-size: 20px;
+    }
+    .txt1{
+        width: 110px;
+        height: 25px;
+        position: absolute;
+        margin-left: 100px;
+        bottom: -450px;
+        font-size: 20px;
+    }
+    .txt2{
+        width: 110px;
+        height: 25px;
+        position: absolute;
+        margin-left: 100px;
+        bottom: -780px;
+        font-size: 20px;
+    }
+    .ph img{
+        height: 70px;
+        width: auto;
+        object-fit: cover;
+        padding-top: 50px;
+    }
+    .product-card{
+    }
+    .product-container1{
+        display: grid;
+        grid-template-columns: 2fr 2fr;
+        margin-right: 60px;
+        margin-left: 80px;
+    }
+    .bas{
+        position: absolute;
+        bottom: 120px;
+        left: 150px;
+        font-size: 18px;
+        display: grid;
+        gap: 20px;
+        background: #000000bd;
+        width: 300px;
+        height: 180px;
+        padding: 20px;
+    }
+    .bas button{
+        background: rgb(53, 53, 255);
+        border: .5px solid black;
+        border-radius: 20px;
+        width: 70px;
+        height: 20px;
+        transition: .5s ease-in-out;
+        color: white;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        border: 1px rgb(53, 53, 255) solid;
+        cursor: pointer;
+    } 
+    .bas button:hover{
+        transition: .5s ease-in-out;
+        background: none;
+        border: 1px rgb(53, 53, 255) solid;
+        cursor: pointer;
+    }
+    footer{
+        display: flex;
+        gap: 10px;
+        flex-direction: row;
+    }
+    .s{
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+    }
+    .s img{
+        height: 45px;
+        width: auto;
+        transition: .5s ease-in-out;
+    }
+    .s img:hover{
+        transform: scale(1.2);
+        transition: .5s ease-in-out;
+    }
+}

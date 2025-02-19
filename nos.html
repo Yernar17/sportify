@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Носки</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header>
+        <div class="l">
+            <img id="logo" src="IMG_6524-removebg-preview.png" alt="">
+            <h1>SPORTIFY</h1>
+        </div>
+        <div class="had">
+            <a href="index.html">Home</a>
+            <a href="about.html">About us</a>
+            <a href="basket.html">Корзина</a>
+        </div>
+    </header>
+    <nav>
+        <a href="hudi.html">Худи</a>
+        <a href="nos.html">Носки</a>
+        <a href="foot.html">Футболки</a>
+        <a href="triko.html">Трико</a>
+        <a href="aks.html">Аксессы</a>
+        <a href="shorti.html">Шорты</a>
+    </nav>
+    
+    <div id="cont" class="product-container"></div>
+    
+    <script>
+        const noski = [
+            {
+                Image: 'https://ir-3.ozone.ru/s3/multimedia-3/c1000/6405577299.jpg',
+                nos: 'Белые Nike',
+                money: '600'
+            },
+            {
+                Image: 'https://frankfurt.apollo.olxcdn.com/v1/files/5v5gwsyxbw6j3-KZ/image;s=736x980',
+                nos: 'Тренеровочные',
+                money: '1000'
+            }
+        ];
+        
+        const container = document.getElementById('cont');
+        
+        noski.forEach(item => {
+            const card = document.createElement('div');
+            card.classList.add('product-card');
+            
+            card.innerHTML = `
+                <img src="${item.Image}" alt="${item.nos}">
+                <h2>${item.nos}</h2>
+                <p>${item.money} KZT</p>
+                <button class="add-to-cart">Добавить в корзину</button>
+            `;
+            
+            card.querySelector('.add-to-cart').addEventListener('click', () => {
+                let cart = JSON.parse(localStorage.getItem('cart')) || [];
+                cart.push(item);
+                localStorage.setItem('cart', JSON.stringify(cart));
+            });
+            
+            container.appendChild(card);
+        });
+    </script>
+</body>
+</html>

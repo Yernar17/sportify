@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Худи толстовки</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header>
+        <div class="l">
+            <img id="logo" src="IMG_6524-removebg-preview.png" alt="">
+            <h1>SPORTIFY</h1>
+        </div>
+        <div class="had">
+            <a href="index.html">Home</a>
+            <a href="about.html">About us</a>
+            <a href="basket.html">Корзина</a>
+        </div>
+    </header>
+    <nav>
+        <a href="hudi.html">Худи</a>
+        <a href="nos.html">Носки</a>
+        <a href="foot.html">Футболки</a>
+        <a href="triko.html">Трико</a>
+        <a href="aks.html">Аксессы</a>
+        <a href="shorti.html">Шорты</a>
+    </nav>
+    
+    <div id="cont" class="product-container"></div>
+    
+    <script>
+        const hudies = [ 
+            {
+                Image: 'https://resources.cdn-kaspi.kz/img/m/p/h1c/h66/85514610573342.jpg?format=gallery-large',
+                hudi: 'Без Надписи',
+                money: '15 000'
+            },
+            {
+                Image: 'https://www.cherokeeprint.com.ua/wp-content/uploads/2024/04/5358579216_tolstovka-s-printom.png',
+                hudi: 'С рисунком',
+                money: '17 000'
+            },
+            {
+                Image: 'https://clans.by/assets/images/goods/polar-skate-co/default-hoodie-black-1_544x544.jpg',
+                hudi: 'С надписью',
+                money: '16 000'
+            }
+        ];
+        
+        const container = document.getElementById('cont');
+        
+        hudies.forEach(item => {
+            const card = document.createElement('div');
+            card.classList.add('product-card');
+            
+            card.innerHTML = `
+                <img src="${item.Image}" alt="${item.hudi}">
+                <h2>${item.hudi}</h2>
+                <p>${item.money} KZT</p>
+                <button class="add-to-cart">Добавить в корзину</button>
+            `;
+            
+            card.querySelector('.add-to-cart').addEventListener('click', () => {
+                let cart = JSON.parse(localStorage.getItem('cart')) || [];
+                cart.push(item);
+                localStorage.setItem('cart', JSON.stringify(cart));
+            });
+            
+            container.appendChild(card);
+        });
+    </script>
+</body>
+</html>

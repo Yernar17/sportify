@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О нас</title>
+    <style>
+        body {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            display: grid;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            gap: 20px;
+        }
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        .highlights {
+            font-weight: bold;
+            color: rgb(53, 53, 255);
+        }
+        *{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    background: rgb(0, 0, 0);
+    height: 120px;
+    width: 100%;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav{
+    background: rgb(0, 0, 0);
+    height: 40px;
+    width: 100%;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav a{
+    color: white;
+    text-decoration: none;
+    display: flex;
+    width: 270px;
+    height: 30px;
+    border-radius: 6px;
+    align-items: center;
+    transition: .6s ease-in-out;
+    text-align: center;
+    justify-content: center;
+}
+
+nav a:hover{
+    background: rgb(53, 53, 255);
+    transition: .6s ease-in-out;
+}
+
+body{
+    background: #cfcfcf;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#logo{
+    height: 140px;
+    width: auto;
+}
+
+.had{
+    display: flex;
+    gap: 50px;
+}
+
+.had a{
+    color: white;
+    text-decoration: none;
+    transition: .6s ease-in-out;
+}
+
+.had a:hover{
+    color: rgb(53, 53, 255);
+    transition: .6s ease-in-out;
+}
+.l{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: white;
+}
+
+footer{
+    background: #000;
+    width: 100%;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 15px 0;
+    align-items: center;
+}
+
+.socseti{
+    display: grid;
+    gap: 60px;
+}
+
+.log1{
+    height: 250px;
+    width: auto;
+}
+
+.s{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.s img{
+    height: 55px;
+    width: auto;
+    transition: .5s ease-in-out;
+}
+
+.s img:hover{
+    transform: scale(1.2);
+    transition: .5s ease-in-out;
+}
+
+.d{
+    display: grid;
+    gap: 100px;
+}
+
+@keyframes rotateLogo {
+    0% {
+        transform: rotateZ(0deg);
+        transform: rotateX(0deg);
+        transform: rotateY(0deg);
+    }
+    100% {
+        transform: rotateZ(360deg);
+        transform: rotateX(360deg);
+        transform: rotateY(360deg);
+    }
+    0%{
+        transform: rotateZ(0deg);
+        transform: rotateX(0deg);
+        transform: rotateY(0deg);
+    }
+}
+
+#logo:hover {
+    animation: rotateLogo 0.6s ease-in-out;
+}
+
+@media (max-width: 768px){
+    .container{
+        width: 500px;
+        
+    }
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="l">
+            <img id="logo" src="IMG_6524-removebg-preview.png" alt="">
+            <h1>SPORTIFY</h1>
+        </div>
+        <div class="had">
+            <a href="index.html">Home</a>
+            <a href="about.html">About us</a>
+            <a href="#footer">Связаться</a>
+            <a href="basket.html">Корзина</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>О нас</h1>
+        <p>Добро пожаловать в <span class="highlights">SPORTIFY</span> – ваш источник стильной и функциональной одежды для спорта и активного образа жизни!</p>
+        <p>Мы создаем одежду, которая сочетает <span class="highlights">качество, стиль и технологичность</span>, помогая вам чувствовать себя уверенно на тренировках и за их пределами.</p>
+        <p>В нашем магазине вы найдете:</p>
+        <ul>
+            <li>Удобную и долговечную спортивную одежду</li>
+            <li>Дышащие и эластичные ткани</li>
+            <li>Современный дизайн для мотивации</li>
+        </ul>
+        <p>Присоединяйтесь к нашему комьюнити, двигайтесь вперед и достигайте новых высот вместе с нами!</p>
+    </div>
+
+    <footer id="footer">
+        <div>
+            <img class="log1" src="IMG_6524-removebg-preview.png" alt="">
+            <h1>SPORTIFY</h1>
+        </div>
+    
+        <div class="d">
+            <h1>О компании</h1>
+            <p>Интернет магазин спорт товаров</p>
+        </div>
+    
+        <div class="socseti">
+            <h1>Соц сети</h1>
+    
+            <div class="s">
+                <a href="https://t.me/@kana1ikk"><img src="telegram-svgrepo-com (1).svg" alt=""></a>
+                <a href="https://wa.me/+77471168018"><img src="whatsapp-symbol-logo-svgrepo-com.svg" alt=""></a>
+                <a href=""><img src="tiktok-icon-black-1-logo-svgrepo-com.svg" alt=""></a>
+                <a href=""><img src="instagram-1-svgrepo-com.svg" alt=""></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
