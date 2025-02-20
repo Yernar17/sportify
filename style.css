@@ -479,8 +479,6 @@ footer{
         object-fit: cover;
         padding-top: 50px;
     }
-    .product-card{
-    }
     .product-container1{
         display: grid;
         grid-template-columns: 2fr 2fr;
