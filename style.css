@@ -218,8 +218,6 @@ body{
     padding-top: 50px;
 }
 
-
-
 .l{
     display: flex;
     flex-direction: row;
@@ -340,21 +338,38 @@ svg{
     background: blue;
 }
 
+.total{
+    text-align: end;
+    background: rgb(53, 53, 255);
+    border-radius: 5px;
+    padding: 15px 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 35%;
+    font-size: 22px;
+    color: white;
+}
+
 #clear-cart {
     display: block;
-    margin: 20px 35%;
-    padding: 15px 30px;
+    display: flex;
+    margin: 20px 45%;
+    padding: 15px 40px;
     font-size: 16px;
     background: black;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: .5s ease-in-out;
+    flex-direction: row;
 }
 
 #clear-cart:hover {
     background: blue;
+    transition: .5s ease-in-out;
+    cursor: pointer;
 }
 
 footer{

@@ -34,6 +34,7 @@
     <a href="https://wa.me/+77471168018"><button class="buy">КУПИТЬ</button></a>
     <div id="basket-container" class="product-container"></div>
     <button id="clear-cart">Очистить корзину</button>
+    <p class="total">Итого: <span id="total-price">0</span> KZT</p>
     
     
     <footer id="footer">
@@ -60,47 +61,61 @@
     </footer>
 
     <script>
+        const totalPrice = document.getElementById('total-price');
         const basketContainer = document.getElementById('basket-container');
         const clearCartButton = document.getElementById('clear-cart');
-        
+    
         function renderCart() {
             basketContainer.innerHTML = '';
             let cart = JSON.parse(localStorage.getItem('cart')) || [];
             
             if (cart.length === 0) {
                 basketContainer.innerHTML = '<p style="text-align: center; font-size: 20px;">Корзина пуста</p>';
+                totalPrice.textContent = '0';
                 return;
             }
-            
+    
             cart.forEach((item, index) => {
                 const card = document.createElement('div');
                 card.classList.add('product-card');
-                
+    
                 card.innerHTML = `
                     <img src="${item.Image}" alt="${item.aks}">
                     <h2>${item.aks}</h2>
                     <p>${item.money} KZT</p>
                     <button class="remove-from-cart" data-index="${index}">Удалить</button>
                 `;
-                
+    
                 basketContainer.appendChild(card);
             });
-            
+    
             document.querySelectorAll('.remove-from-cart').forEach(button => {
                 button.addEventListener('click', (e) => {
                     let cart = JSON.parse(localStorage.getItem('cart')) || [];
                     cart.splice(e.target.dataset.index, 1);
                     localStorage.setItem('cart', JSON.stringify(cart));
                     renderCart();
+                    calculateTotal(); 
                 });
             });
+    
+            calculateTotal();
         }
-        
+    
+        function calculateTotal() {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let total = cart.reduce((sum, item) => sum + parseFloat(item.money), 0);
+            totalPrice.textContent = total;
+        }
+    
         clearCartButton.addEventListener('click', () => {
             localStorage.removeItem('cart');
             renderCart();
-        });        
+            calculateTotal();
+        });
+    
         renderCart();
     </script>
+    
 </body>
 </html>
